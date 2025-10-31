@@ -5,13 +5,15 @@ class App {
         var lastId = 0
         val wiseSayings = mutableListOf<WiseSaying>()
 
+
+
         println("== 명언 앱 ==")
 
         while (true) {
             print("명언) ")
             val input = readln().trim()
-
-            when (input) {
+            val rq: Rq = Rq(input)
+            when (rq.action) {
                 "종료" -> {
                     break
                 }
