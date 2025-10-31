@@ -10,8 +10,16 @@ fun main() {
         print("명령) ")
         val input = readln().trim()//readln()은 스캐너 역할, trim은 좌우공백 없애줌
 
-        if(input == "종료") {
-            break
+        when(input) {
+            "종료" -> {
+                break
+            }
+            "등록" -> {
+                print("명언: ")
+                val content = readln().trim()
+                print("작가: ")
+                val author = readln().trim()
+            }
         }
     }
 }
