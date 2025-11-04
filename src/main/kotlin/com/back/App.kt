@@ -1,11 +1,9 @@
 package com.back
 
-import com.back.domain.global.bean.SingletonScope
-import com.back.domain.global.bean.SingletonScope.systemController
-import com.back.domain.global.bean.SingletonScope.wiseSayingController
 import com.back.global.rq.Rq
 import com.back.domain.system.controller.SystemController
 import com.back.domain.wiseSaying.controller.WiseSayingController
+import com.back.global.bean.SingletonScope
 
 class App(
     val wiseSayingController: WiseSayingController = SingletonScope.wiseSayingController,
