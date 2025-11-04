@@ -1,4 +1,4 @@
-import com.back.Rq
+package com.back
 
 import com.back.domain.system.controller.SystemController
 import com.back.domain.wiseSaying.controller.WiseSayingController
@@ -19,7 +19,10 @@ class App(
             val rq = Rq(input)
 
             when (rq.action) {
-                "종료" -> systemController.exit()
+                "종료" -> {
+                    systemController.exit()
+                    break
+                }
                 "등록" -> wiseSayingController.write()
                 "목록" -> wiseSayingController.list()
                 "삭제" -> wiseSayingController.delete(rq)
