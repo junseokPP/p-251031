@@ -1,13 +1,16 @@
 package com.back
 
+import com.back.domain.global.bean.SingletonScope
+import com.back.domain.global.bean.SingletonScope.systemController
+import com.back.domain.global.bean.SingletonScope.wiseSayingController
+import com.back.global.rq.Rq
 import com.back.domain.system.controller.SystemController
 import com.back.domain.wiseSaying.controller.WiseSayingController
 
 class App(
-    val wiseSayingController: WiseSayingController = WiseSayingController(),
-    val systemController: SystemController = SystemController()
+    val wiseSayingController: WiseSayingController = SingletonScope.wiseSayingController,
+    val systemController: SystemController = SingletonScope.systemController
 ) {
-
     fun run() {
 
         println("== 명언 앱 ==")
@@ -23,6 +26,7 @@ class App(
                     systemController.exit()
                     break
                 }
+
                 "등록" -> wiseSayingController.write()
                 "목록" -> wiseSayingController.list()
                 "삭제" -> wiseSayingController.delete(rq)
